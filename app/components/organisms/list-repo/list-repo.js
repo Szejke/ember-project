@@ -8,10 +8,10 @@ export default class OrganismsListRepoListRepoComponent extends Component {
   @tracked listRepos;
 
   @action
-  submit() {
-    this.cart.getRepos('Szejke').then((e) => {
+  submit(valueForm) {
+    console.log(valueForm);
+    this.cart.getRepos(valueForm).then((e) => {
       this.listRepos = e;
     });
-    console.log(this.listRepos);
   }
 }

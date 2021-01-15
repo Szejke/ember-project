@@ -1,3 +1,9 @@
-<div class={{this.styles}}>
-    <input type="text" {{on "input" this.userInput}}>
+<div class={{this.styleContentForm}}>
+    <input class="form-control" value={{this.form.valueInput}} type="text" {{on "input" this.userInput}}>
+    <div>
+        <Input @id="admin-checkbox" @type="checkbox" @checked={{this.valueCheck}} {{on "input" this.checkFork}} />
+        <label>With Fork?</label>
+    </div>
+    <button type="button" class="btn btn-primary" {{on "click" (fn @actionSerchRepo this.form)}}>Search
+        User</button>
 </div>

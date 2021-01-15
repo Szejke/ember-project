@@ -1,7 +1,6 @@
-<Molecules::SearchUser::SearchUser />
-<button type="button" {{on "click" this.submit}}>Click Me!</button>
+<Molecules::SearchUser::SearchUser @actionSerchRepo={{this.submit}} />
 
 {{#each this.listRepos as |repo|}}
 <Molecules::Repo::Repo @repoName={{repo.name}} @ownerLogin={{repo.owner.login}} @repoDescription={{repo.description}}
-    @repoAvatarUrl={{repo.owner.avatar_url}} />
+    @repoAvatarUrl={{repo.owner.avatar_url}} @repoId={{repo.id}} />
 {{/each}}
