@@ -1,7 +1,5 @@
 import Component from '@glimmer/component';
-import { tracked } from '@glimmer/tracking';
 import csz from 'csz';
-
 import { alias } from '@ember/object/computed';
 
 const imageArea = csz`
@@ -49,7 +47,6 @@ export default class MoleculesRepoRepoComponent extends Component {
   repo = repo;
   contentRepo = contentRepo;
   styledInformation = styledInformation;
-
   @alias('args.repoDescription') repoDescription;
 
   textMoreInformacion = 'More Informacion';

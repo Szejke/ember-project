@@ -1,5 +1,5 @@
 <div class="{{this.contentRepo}}">
-    <LinkTo class="{{this.repo}}" @route='repo' @model='1'>
+    <LinkTo class="{{this.repo}}" @route='repo' @model={{@repoId}}>
         <div class="{{this.imageArea}}">
             <Atoms::Awatar::Awatar @repoAvatarUrl={{@repoAvatarUrl}} />
         </div>
