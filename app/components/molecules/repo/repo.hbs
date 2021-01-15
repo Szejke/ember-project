@@ -1,8 +1,10 @@
 <LinkTo class="{{this.repo}}" @route='repo' @model='1'>
     <div class="{{this.imageArea}}">
-        <Atoms::Awatar::Awatar />
+        <Atoms::Awatar::Awatar @repoAvatarUrl={{@repoAvatarUrl}} />
     </div>
     <div class="{{this.repoInfoArea}}">
-        <Atoms::Paragraphs::Header />
+        <Atoms::Paragraphs::Header @text={{@repoName}} />
+        <Atoms::Paragraphs::DefaultText @text={{this.ownerLogin}} />
+        <Atoms::Paragraphs::DefaultText @text={{this.description}} />
     </div>
 </LinkTo>

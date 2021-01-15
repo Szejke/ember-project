@@ -1,6 +1,8 @@
 import Component from '@glimmer/component';
+import { tracked } from '@glimmer/tracking';
 import csz from 'csz';
-import { inject as service } from '@ember/service';
+
+import { alias } from '@ember/object/computed';
 
 const imageArea = csz`
   background: linear-gradient(to top, #2193b0, #6dd5ed);
@@ -36,9 +38,13 @@ export default class MoleculesRepoRepoComponent extends Component {
   imageArea = imageArea;
   repoInfoArea = repoInfoArea;
   repo = repo;
-  @service store;
+  @alias('args.repoDescription') repoDescription;
 
-  async mode(params) {
-    console.log(await this.store.findAll());
+  get ownerLogin() {
+    return `Owner: ${this.args.ownerLogin}`;
+  }
+
+  get description() {
+    return this.repoDescription ? `Description: ${this.repoDescription}` : '';
   }
 }
