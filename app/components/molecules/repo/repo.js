@@ -5,7 +5,7 @@ import csz from 'csz';
 import { alias } from '@ember/object/computed';
 
 const imageArea = csz`
-  background: linear-gradient(to top, #2193b0, #6dd5ed);
+background: linear-gradient(to left,#75b7c800,#3533ff);
   height: 100%;
   width: 40%;
   display: flex;
@@ -19,8 +19,6 @@ width: 60%;
 `;
 
 const repo = csz`
-  width: 500px;
-  height: 240px;
   margin: 0 auto 50px;
   display: flex;
   overflow: hidden;
@@ -31,14 +29,30 @@ const repo = csz`
   &:hover {
     text-decoration: none;
     color: #333;
+    border: 5px solid blue;
   }
+`;
+
+const contentRepo = csz`
+width: 50%;
+height: 240px;
+display: flex;
+`;
+
+const styledInformation = csz`
+align-self: center;
 `;
 
 export default class MoleculesRepoRepoComponent extends Component {
   imageArea = imageArea;
   repoInfoArea = repoInfoArea;
   repo = repo;
+  contentRepo = contentRepo;
+  styledInformation = styledInformation;
+
   @alias('args.repoDescription') repoDescription;
+
+  textMoreInformacion = 'More Informacion';
 
   get ownerLogin() {
     return `Owner: ${this.args.ownerLogin}`;

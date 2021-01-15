@@ -6,23 +6,34 @@ import csz from 'csz';
 
 export default class MoleculesSearchUserSearchUserComponent extends Component {
   @service('service-repo') cart;
-  @tracked valueInput = '';
-  @tracked invalideEmpty = false;
-  @tracked listRepos;
 
-  styles = csz`
-  background-color: ${this.invalideEmpty ? 'red' : 'green'};
-      font-size: 1em;
-      margin: 1em;
-      padding: 0.25em 1em;
-      border: 2px solid palevioletred;
-      border-radius: 3px;
+  @tracked invalideEmpty = false;
+  @tracked form = {
+    valueChecFork: false,
+    valueInput: '',
+  };
+
+  styleContentForm = csz`
+  padding: 2rem;
+  margin: 0 auto 50px;
+  display: flex;
+  flex-direction: column ;
+  overflow: hidden;
+  box-shadow: -20px 10px 30px 0px rgba(0, 0, 0, 0.25);
+  color: #333;
+  border-radius: 10px;
+  &:hover {
+    color: #333;
+  }
 `;
 
   @action
-  userInput(event) {
-    this.valueInput = event.target.value;
-    console.log(this.valueInput);
+  checkFork(event) {
+    this.form.valueChecFork = event.target.checked;
   }
 
+  @action
+  userInput(event) {
+    this.form.valueInput = event.target.value;
+  }
 }
