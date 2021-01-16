@@ -6,6 +6,7 @@
   "repository": "",
   "license": "MIT",
   "author": "",
+  "proxy": "https://api.github.com",
   "directories": {
     "doc": "doc",
     "test": "tests"

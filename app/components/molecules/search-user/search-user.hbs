@@ -1,4 +1,9 @@
 <div class={{this.styleContentForm}}>
+    {{#if this.validateEmpty}}
+    <h1 class={{this.stylevalidate}}>
+        <Atoms::Paragraphs::DefaultText @text={{this.validateInformation}} />
+    </h1>
+    {{/if}}
     <input class="form-control" value={{this.form.valueInput}} type="text" {{on "input" this.userInput}}>
     <div>
         <Input @id="admin-checkbox" @type="checkbox" @checked={{this.valueCheck}} {{on "input" this.checkFork}} />

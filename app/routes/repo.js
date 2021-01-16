@@ -1,4 +1,3 @@
 import Route from '@ember/routing/route';
 
-export default class RepoRoute extends Route {
-}
+export default class RepoRoute extends Route {}

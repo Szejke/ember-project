@@ -17,6 +17,7 @@ width: 60%;
 `;
 
 const repo = csz`
+  width: 50%;
   margin: 0 auto 50px;
   display: flex;
   overflow: hidden;
@@ -32,7 +33,6 @@ const repo = csz`
 `;
 
 const contentRepo = csz`
-width: 50%;
 height: 240px;
 display: flex;
 `;
@@ -47,9 +47,8 @@ export default class MoleculesRepoRepoComponent extends Component {
   repo = repo;
   contentRepo = contentRepo;
   styledInformation = styledInformation;
-  @alias('args.repoDescription') repoDescription;
 
-  textMoreInformacion = 'More Informacion';
+  textMoreInformacion = 'More Information';
 
   get ownerLogin() {
     return `Owner: ${this.args.ownerLogin}`;

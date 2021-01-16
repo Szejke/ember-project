@@ -4,13 +4,15 @@ import { inject as service } from '@ember/service';
 import { action } from '@ember/object';
 
 export default class OrganismsListRepoListRepoComponent extends Component {
-  @service('service-repo') cart;
+  @service('service-repo') serviceRepo;
   @tracked listRepos;
+  @tracked validateEmpty;
 
   @action
   submit(valueForm) {
-    console.log(valueForm);
-    this.cart.getRepos(valueForm).then((e) => {
+    const { valueInput } = valueForm;
+    this.validateEmpty = valueInput === '' ? true : false;
+    this.serviceRepo.getRepos(valueForm).then((e) => {
       this.listRepos = e;
     });
   }

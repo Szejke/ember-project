@@ -1,18 +1,28 @@
 import Service from '@ember/service';
-import { tracked } from '@glimmer/tracking';
+
+const HOST = 'https://api.github.com/';
 
 export default class ServiceRepoService extends Service {
-  async getRepos(userName) {
-    const response = await fetch('http://localhost:8080/github');
-    const post = await response.json();
-    console.log(post);
-    return post;
+  async getRepoById(identifier) {
+    identifier = identifier.split(':');
+    const userName = identifier[0];
+    const id = identifier[1];
+    const response = await fetch(HOST + `users/${userName}/repos`);
+    const repos = await response.json();
+    const repo = repos.find((e) => e.id == id);
+    return repo;
   }
 
-  async getBranch(urlBranches) {
-    const response = await fetch(urlbranches);
-    const post = await response.json();
-    console.log(post);
-    return post;
+  async getRepos(vlaueInputs) {
+    const { valueChecFork, valueInput } = vlaueInputs;
+    const response = await fetch(HOST + `users/${valueInput}/repos`);
+    const repo = await response.json();
+    return valueChecFork ? repo : repo.filter((e) => e.fork === false);
+  }
+
+  async getBranches(urlBranches) {
+    const response = await fetch(urlBranches.split('{')[0]);
+    const branches = await response.json();
+    return branches;
   }
 }
