@@ -41,6 +41,5 @@ export default class OrganismsInformationRepoInformationRepoComponent extends Co
   async getRepo() {
     this.repo = await this.getRepoFromService();
     this.branches = await this.getBranchesFromService(this.repo.branches_url);
-    console.log(this.repo);
   }
 }
