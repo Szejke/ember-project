@@ -6,6 +6,7 @@ home: Home
 idRepo: ID Repo {idRepo}
 owner: 'Owner: {owner}'
 nameBranche: 'Name: {name}'
+description: 'Description: {description}'
 sha: 'Sha: {sha}'
 url: 'Url: {url}'
 informationAboutBranchs: Information About Branchs

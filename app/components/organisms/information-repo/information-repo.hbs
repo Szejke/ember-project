@@ -13,6 +13,9 @@
         <Atoms::Awatar::Awatar @repoAvatarUrl={{this.repo.owner.avatar_url}} />
         <h1>{{t 'owner' owner=this.repo.owner.login}}</h1>
         <h6>{{t 'idRepo' idRepo=this.repo.id}}</h6>
+        {{#if this.repo.description}}
+        <Atoms::Paragraphs::DefaultText @text={{t 'description' description=this.repo.description }} />
+        {{/if}}
     </div>
     <Atoms::Paragraphs::Header @text={{t 'informationAboutBranchs' }} />
     {{#each this.branches as |branche|}}

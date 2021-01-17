@@ -46,12 +46,4 @@ export default class MoleculesRepoRepoComponent extends Component {
   repo = repo;
   contentRepo = contentRepo;
   styledInformation = styledInformation;
-
-  get ownerLogin() {
-    return `Owner: ${this.args.ownerLogin}`;
-  }
-
-  get description() {
-    return this.repoDescription ? `Description: ${this.repoDescription}` : '';
-  }
 }
