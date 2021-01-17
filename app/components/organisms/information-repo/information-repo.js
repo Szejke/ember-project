@@ -5,7 +5,7 @@ import { tracked } from '@glimmer/tracking';
 import csz from 'csz';
 
 const styleBrancheInformation = csz`
-    padding: 2rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -14,7 +14,7 @@ const styleBrancheInformation = csz`
 `;
 
 const styleBrancheName = csz`
-font-weight: bold; 
+ font-weight: bold; 
 `;
 
 export default class OrganismsInformationRepoInformationRepoComponent extends Component {
@@ -41,5 +41,6 @@ export default class OrganismsInformationRepoInformationRepoComponent extends Co
   async getRepo() {
     this.repo = await this.getRepoFromService();
     this.branches = await this.getBranchesFromService(this.repo.branches_url);
+    console.log(this.repo);
   }
 }

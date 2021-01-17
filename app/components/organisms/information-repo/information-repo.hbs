@@ -3,7 +3,7 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
             <LinkTo @route="index">
-                Home
+                {{t 'home'}}
             </LinkTo>
         </li>
         <li class="breadcrumb-item">{{this.repo.full_name}}</li>
@@ -11,18 +11,20 @@
 
     <div>
         <Atoms::Awatar::Awatar @repoAvatarUrl={{this.repo.owner.avatar_url}} />
-        <h1>Owner: {{this.repo.owner.login}}</h1>
-        <h6>ID Repo: {{this.repo.id}}</h6>
-        {{this.idRepo}}
+        <h1>{{t 'owner' owner=this.repo.owner.login}}</h1>
+        <h6>{{t 'idRepo' idRepo=this.repo.id}}</h6>
+        {{#if this.repo.description}}
+        <Atoms::Paragraphs::DefaultText @text={{t 'description' description=this.repo.description }} />
+        {{/if}}
     </div>
-    <Atoms::Paragraphs::Header @text={{'Information About Branchs'}} />
+    <Atoms::Paragraphs::Header @text={{t 'informationAboutBranchs' }} />
     {{#each this.branches as |branche|}}
     <div class={{this.styleBrancheInformation}}>
         <div class={{this.styleBrancheName}}>
-            <Atoms::Paragraphs::DefaultText @text={{concat "Name" ': ' branche.name}} />
+            <Atoms::Paragraphs::DefaultText @text={{t "nameBranche" name=branche.name}} />
         </div>
-        <Atoms::Paragraphs::DefaultText @text={{concat "Sha" ': ' branche.commit.sha}} />
-        <a href={{branche.commit.url}}>{{concat "url" ': ' branche.commit.url}}</a>
+        <Atoms::Paragraphs::DefaultText @text={{t 'sha' sha=branche.commit.sha}} />
+        <a href={{branche.commit.url}}>{{t 'url' url=branche.commit.url}}</a>
     </div>
     {{/each}}
 </main>

@@ -1,14 +1,14 @@
 <div class={{this.styleContentForm}}>
     {{#if this.validateEmpty}}
     <h1 class={{this.stylevalidate}}>
-        <Atoms::Paragraphs::DefaultText @text={{this.validateInformation}} />
+        <Atoms::Paragraphs::DefaultText @text={{t 'validateInformation' }} />
     </h1>
     {{/if}}
     <input class="form-control" value={{this.form.valueInput}} type="text" {{on "input" this.userInput}}>
     <div>
         <Input @id="admin-checkbox" @type="checkbox" @checked={{this.valueCheck}} {{on "input" this.checkFork}} />
-        <label>With Fork?</label>
+        <label>{{t 'textWithFork'}}</label>
     </div>
     <button type="button" class="btn btn-primary" {{on "click" (fn @actionSerchRepo this.form)}}>Search
-        User</button>
+        {{t 'user'}}</button>
 </div>

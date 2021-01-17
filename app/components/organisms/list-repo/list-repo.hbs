@@ -1,6 +1,6 @@
 <Molecules::SearchUser::SearchUser @actionSerchRepo={{this.submit}} @validateEmpty={{this.validateEmpty}} />
 
 {{#each this.listRepos as |repo|}}
-<Molecules::Repo::Repo @repoName={{repo.name}} @ownerLogin={{repo.owner.login}} @repoDescription={{repo.description}}
+<Molecules::Repo::Repo @repoName={{repo.name}} @ownerLogin={{repo.owner.login}}
     @repoAvatarUrl={{repo.owner.avatar_url}} @repoId={{repo.id}} />
 {{/each}}

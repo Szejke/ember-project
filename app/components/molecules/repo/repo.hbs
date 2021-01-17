@@ -1,17 +1,14 @@
 <div class="{{this.contentRepo}}">
-
-
     <LinkTo class="{{this.repo}}" @route='repo' @model={{concat @ownerLogin ':' @repoId }}>
         <div class="{{this.imageArea}}">
             <Atoms::Awatar::Awatar @repoAvatarUrl={{@repoAvatarUrl}} />
         </div>
         <div class="{{this.repoInfoArea}}">
             <Atoms::Paragraphs::Header @text={{@repoName}} />
-            <Atoms::Paragraphs::DefaultText @text={{this.ownerLogin}} />
-            <Atoms::Paragraphs::DefaultText @text={{this.description}} />
+            <Atoms::Paragraphs::DefaultText @text={{t 'owner' owner=@ownerLogin}} />
         </div>
         <div class={{this.styledInformation}}>
-            More Informacion
+            <Atoms::Paragraphs::DefaultText @text={{t "textMoreInformacion" }} />
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                 class="bi bi-chevron-double-down" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
