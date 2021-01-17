@@ -1,9 +1,8 @@
 import Component from '@glimmer/component';
 import csz from 'csz';
-import { alias } from '@ember/object/computed';
 
 const imageArea = csz`
-background: linear-gradient(to left,#75b7c800,#3533ff);
+  background: linear-gradient(to left,#75b7c800,#3533ff);
   height: 100%;
   width: 40%;
   display: flex;
@@ -12,8 +11,8 @@ background: linear-gradient(to left,#75b7c800,#3533ff);
 `;
 
 const repoInfoArea = csz`
-padding: 24px 32px;
-width: 60%;
+  padding: 24px 32px;
+  width: 60%;
 `;
 
 const repo = csz`
@@ -33,12 +32,12 @@ const repo = csz`
 `;
 
 const contentRepo = csz`
-height: 240px;
-display: flex;
+  height: 240px;
+  display: flex;
 `;
 
 const styledInformation = csz`
-align-self: center;
+  align-self: center;
 `;
 
 export default class MoleculesRepoRepoComponent extends Component {
@@ -47,8 +46,6 @@ export default class MoleculesRepoRepoComponent extends Component {
   repo = repo;
   contentRepo = contentRepo;
   styledInformation = styledInformation;
-
-  textMoreInformacion = 'More Information';
 
   get ownerLogin() {
     return `Owner: ${this.args.ownerLogin}`;

@@ -5,28 +5,27 @@ import csz from 'csz';
 import { alias } from '@ember/object/computed';
 
 const styleContentForm = csz`
-padding: 2rem;
-margin: 0 auto 50px;
-display: flex;
-flex-direction: column ;
-overflow: hidden;
-box-shadow: -20px 10px 30px 0px rgba(0, 0, 0, 0.25);
-color: #333;
-border-radius: 10px;
-&:hover {
+  padding: 2rem;
+  margin: 0 auto 50px;
+  display: flex;
+  flex-direction: column ;
+  overflow: hidden;
+  box-shadow: -20px 10px 30px 0px rgba(0, 0, 0, 0.25);
   color: #333;
-}
+  border-radius: 10px;
+    &:hover {
+      color: #333;
+    }
 `;
 
 const stylevalidate = csz`
-color: red;
-font-size: 15px;
+  color: red;
+  font-size: 15px;
 `;
 
 export default class MoleculesSearchUserSearchUserComponent extends Component {
   styleContentForm = styleContentForm;
   stylevalidate = stylevalidate;
-  validateInformation = 'Empty Text Field';
 
   @alias('args.validateEmpty') validateEmpty = false;
 

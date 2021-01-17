@@ -1,0 +1,11 @@
+textMoreInformacion: More Information
+user: User
+textWithFork: With Fork?
+validateInformation: Empty Text Field
+home: Home
+idRepo: ID Repo {idRepo}
+owner: 'Owner: {owner}'
+nameBranche: 'Name: {name}'
+sha: 'Sha: {sha}'
+url: 'Url: {url}'
+informationAboutBranchs: Information About Branchs
