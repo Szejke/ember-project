@@ -12,8 +12,10 @@ export default class OrganismsListRepoListRepoComponent extends Component {
   submit(valueForm) {
     const { valueInput } = valueForm;
     this.validateEmpty = valueInput === '' ? true : false;
-    this.serviceRepo.getRepos(valueForm).then((e) => {
-      this.listRepos = e;
-    });
+    if (!this.validateEmpty) {
+      this.serviceRepo.getRepos(valueForm).then((e) => {
+        this.listRepos = e;
+      });
+    }
   }
 }

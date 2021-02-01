@@ -13,8 +13,8 @@ export default class ServiceRepoService extends Service {
     return repo;
   }
 
-  async getRepos(vlaueInputs) {
-    const { valueChecFork, valueInput } = vlaueInputs;
+  async getRepos(valueInputs) {
+    const { valueChecFork, valueInput } = valueInputs;
     const response = await fetch(HOST + `users/${valueInput}/repos`);
     const repo = await response.json();
     return valueChecFork ? repo : repo.filter((e) => e.fork === false);

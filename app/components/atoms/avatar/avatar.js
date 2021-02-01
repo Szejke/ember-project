@@ -1,12 +1,12 @@
 import Component from '@glimmer/component';
 import csz from 'csz';
 
-const awatar = csz`
+const avatar = csz`
   height: 150px;
   border-radius: 50%;
   `;
 
 export default class AtomsAwatarAwatarComponent extends Component {
-  awatar = awatar;
+  avatar = avatar;
   textAlt = 'avatar Github';
 }
