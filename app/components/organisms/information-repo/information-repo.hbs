@@ -1,5 +1,5 @@
 <main class="container mt-5">
-    <h1>Repository information</h1>
+    <Atoms::Paragraphs::Header @text={{t 'repositoryInformation' }} />
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
             <LinkTo @route="index">
@@ -10,9 +10,11 @@
     </ol>
 
     <div>
-        <Atoms::Awatar::Awatar @repoAvatarUrl={{this.repo.owner.avatar_url}} />
-        <h1>{{t 'owner' owner=this.repo.owner.login}}</h1>
+        <Atoms::Avatar::Avatar @repoAvatarUrl={{this.repo.owner.avatar_url}} />
+        <Atoms::Paragraphs::Header @text={{t 'owner' owner=this.repo.owner.login}} />
+        <h5>{{t 'name' name=this.repo.full_name}}</h5>
         <h6>{{t 'idRepo' idRepo=this.repo.id}}</h6>
+        <a href={{this.repo.html_url}}> {{t 'url' url=this.repo.html_url}} </a>
         {{#if this.repo.description}}
         <Atoms::Paragraphs::DefaultText @text={{t 'description' description=this.repo.description }} />
         {{/if}}
@@ -21,7 +23,7 @@
     {{#each this.branches as |branche|}}
     <div class={{this.styleBrancheInformation}}>
         <div class={{this.styleBrancheName}}>
-            <Atoms::Paragraphs::DefaultText @text={{t "nameBranche" name=branche.name}} />
+            <Atoms::Paragraphs::DefaultText @text={{t "name" name=branche.name}} />
         </div>
         <Atoms::Paragraphs::DefaultText @text={{t 'sha' sha=branche.commit.sha}} />
         <a href={{branche.commit.url}}>{{t 'url' url=branche.commit.url}}</a>

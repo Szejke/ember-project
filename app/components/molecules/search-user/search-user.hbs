@@ -4,11 +4,12 @@
         <Atoms::Paragraphs::DefaultText @text={{t 'validateInformation' }} />
     </h1>
     {{/if}}
-    <input class="form-control" value={{this.form.valueInput}} type="text" {{on "input" this.userInput}}>
+    <input class="form-control" value={{this.form.valueInput}} type="text" {{on "input" this.userInput}}
+        placeholder={{t 'enterUserName' }}>
     <div>
         <Input @id="admin-checkbox" @type="checkbox" @checked={{this.valueCheck}} {{on "input" this.checkFork}} />
         <label>{{t 'textWithFork'}}</label>
     </div>
-    <button type="button" class="btn btn-primary" {{on "click" (fn @actionSerchRepo this.form)}}>Search
-        {{t 'user'}}</button>
+    <button type="button" class="btn btn-primary" {{on "click" (fn @actionSerchRepo this.form)}}>
+        {{t 'userSearch'}}</button>
 </div>

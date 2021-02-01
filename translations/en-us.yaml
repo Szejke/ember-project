@@ -1,12 +1,15 @@
 textMoreInformacion: More Information
-user: User
+repositoryInformation: Repository information
 textWithFork: With Fork?
 validateInformation: Empty Text Field
 home: Home
 idRepo: ID Repo {idRepo}
 owner: 'Owner: {owner}'
-nameBranche: 'Name: {name}'
+name: 'Name: {name}'
 description: 'Description: {description}'
 sha: 'Sha: {sha}'
 url: 'Url: {url}'
 informationAboutBranchs: Information About Branchs
+404NotFound: 404 not found
+userSearch: User Search
+enterUserName: Enter User Name

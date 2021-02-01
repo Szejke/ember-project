@@ -1,7 +1,7 @@
 <div class="{{this.contentRepo}}">
     <LinkTo class="{{this.repo}}" @route='repo' @model={{concat @ownerLogin ':' @repoId }}>
         <div class="{{this.imageArea}}">
-            <Atoms::Awatar::Awatar @repoAvatarUrl={{@repoAvatarUrl}} />
+            <Atoms::Avatar::Avatar @repoAvatarUrl={{@repoAvatarUrl}} />
         </div>
         <div class="{{this.repoInfoArea}}">
             <Atoms::Paragraphs::Header @text={{@repoName}} />

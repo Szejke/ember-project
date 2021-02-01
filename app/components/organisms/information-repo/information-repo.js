@@ -21,7 +21,7 @@ export default class OrganismsInformationRepoInformationRepoComponent extends Co
   styleBrancheInformation = styleBrancheInformation;
   styleBrancheName = styleBrancheName;
   @alias('args.model') model;
-  @service('service-repo') serviceRepo;
+  @service('service-repo') service;
   @tracked repo;
   @tracked branches;
 
@@ -31,15 +31,16 @@ export default class OrganismsInformationRepoInformationRepoComponent extends Co
   }
 
   getRepoFromService() {
-    return this.serviceRepo.getRepoById(this.model.id);
+    return this.service.getRepoById(this.model.id);
   }
 
-  getBranchesFromService(branches_url) {
-    return this.serviceRepo.getBranches(branches_url);
+  getBranchesFromService(branchesUrl) {
+    return this.service.getBranches(branchesUrl);
   }
 
   async getRepo() {
     this.repo = await this.getRepoFromService();
     this.branches = await this.getBranchesFromService(this.repo.branches_url);
+    console.log(this.repo);
   }
 }
